@@ -1,0 +1,15 @@
+pip freeze gives you a list of all packages and libraries installed.
+
+A virtual environment gives you a clean installation of Python with no libraries.
+
+Creation of virtual environments is done by executing the command venv:
+
+python3 -m venv /path/to/new/virtual/environment
+
+Activate virtual environment
+source venv/bin/activate.
+
+Deactivate venv
+deactivate
+
+Flask-RESTful helps us create a REST api.
