@@ -13,3 +13,8 @@ Deactivate venv
 deactivate
 
 Flask-RESTful helps us create a REST api.
+
+We use postman for API testing.
+
+Test-first API design:
+Design then create.

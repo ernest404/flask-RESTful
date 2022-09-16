@@ -1,15 +1,25 @@
 from flask import Flask
 from flask_restful import Resource, Api
 
-# Resource: data that our api returns
+# Resource: collection of data that our api returns
 
 app = Flask(__name__)
 api = Api(app)
 
-class Student(Resource):
-    def get(self, name): #this resource can only be accessed by get request
-        return {'student':name}
+items = []
 
-api.add_resource(Student, '/student/<string:name>') # student/Ernest
+class Item(Resource): 
+    def get(self, name):
+        for item in items:
+            if item['name'] == name:
+                return item
+        return{"item": None}, 404 #a valid json when object is not fount
+d
+    def post(self, name):
+        item = {"name":name, "price": 12.00}
+        items.append(item)
+        return item
 
-app.run()
+api.add_resource(Item, '/item/<string:name>') # http://127.0.0.1:5000/student/Ernest
+
+app.run(debug = True)
